@@ -77,7 +77,7 @@ export const checkIfNewHighScore = (score, highScore) => {
 export const celsiusToFahrenheit = (tempInCelsius) => {
   /* Write your code here */
   return `${tempInCelsius} degrees celsius is ${
-    tempInCelsius + 44
+    (tempInCelsius *1.8+32)
   } degrees fahrenheit`;
 };
 
