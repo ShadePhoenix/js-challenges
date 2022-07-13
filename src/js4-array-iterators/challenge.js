@@ -22,8 +22,17 @@
  */
 
 export const removeFalseValues = (booleanArr) => {
-  return;
+  const newArr=booleanArr.filter((bool)=>bool===true);
+  return  newArr;
 };
+  // for (let i=0;i<booleanArr.length;i++){
+  //   if(booleanArr[i]==false){
+  //     booleanArr.splice(i,1);
+  //     i--
+  //   }
+  // }
+  // return booleanArr;
+
 
 /**
  * A function that takes an array of numbers that are between 0 - 1.
@@ -34,7 +43,8 @@ export const removeFalseValues = (booleanArr) => {
  */
 
 export const createPercentageList = (numbersArr) => {
-  return;
+ const newArr=numbersArr.map((num)=>num*100+"%")
+ return newArr
 };
 
 /**
@@ -47,7 +57,8 @@ export const createPercentageList = (numbersArr) => {
  */
 
 export const createListOfPoessessions = (possessionsArr, name) => {
-  return;
+  const newArr=possessionsArr.map((item)=>name+" "+item)
+  return newArr;
 };
 
 /**
@@ -72,7 +83,8 @@ export const createListOfPoessessions = (possessionsArr, name) => {
  */
 
 export const convertStringToNumbersArray = (numberString) => {
-  return;
+  const newArr=numberString.split("+")
+  return newArr.map(Number);
 };
 
 /**
@@ -84,7 +96,8 @@ export const convertStringToNumbersArray = (numberString) => {
  */
 
 export const createOddEvenArray = (numberString) => {
-  return;
+  const newArr=numberString.split("+");
+  return newArr.map((num)=>num%2==0?"even":"odd");
 };
 
 /**
@@ -97,7 +110,8 @@ export const createOddEvenArray = (numberString) => {
  */
 
 export const filterBooksBySearch = (booksArr, searchTerm) => {
-  return;
+  const newArr=booksArr.filter((item)=>item.match(searchTerm))
+  return newArr;
 };
 
 /**
@@ -117,12 +131,12 @@ export const filterBooksBySearch = (booksArr, searchTerm) => {
  */
 
 export const formatStringArray = (stringArr) => {
-  const cleanedArr = stringArr.forEach((string) => {
+  const cleanedArr = stringArr.map((string) => {    /////map which returns an array instead of foreach which returns a string,
     const cleanStr = string.trim().toLowerCase();
-    return cleanStr;
+    return cleanStr; 
   });
 
-  // console.log(???)
+  console.log(cleanedArr)
 
   const joinedString = cleanedArr.join("+");
 
@@ -143,7 +157,9 @@ export const formatStringArray = (stringArr) => {
  */
 
 export const formatString = (string) => {
-  return;
+   const strArr=string.split('');
+   const newArr=strArr.filter((character)=>character.match(/[A-Za-z]/)).map((item,index)=>index%2==0?item.toUpperCase():item.toLowerCase());
+   return newArr;
 };
 
 /**
@@ -170,5 +186,18 @@ export const formatString = (string) => {
  */
 
 export const fizzBuzz = (mixedArray) => {
-  return;
+  const newArr=mixedArray.filter((item)=>{
+    if((typeof item=="number"&&item>0) ||(typeof item=="string"&&item.match(/^[^-]*[0-9]/)))
+    return item;
+}).map((item)=>{
+    if(item%3==0&&item%5==0)
+    return "FizzBuzz";
+    else if(item%3==0)
+    return "Fizz"
+    else if(item%5==0)
+    return "Buzz"
+    else
+    return String(item);
+})
+  return newArr;
 };

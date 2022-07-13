@@ -24,6 +24,7 @@
 export const createRecipeString = (ingredientsArr) => {
   return ingredientsArr.join("+");
 };
+//export const createRecipeString = (ingredientsArr) =>ingredientsArr.join("+");
 
 /**
  * A function that takes an Array of Items and returns a NEW ARRAY with the first and last item in it.
@@ -38,7 +39,8 @@ export const getFirstAndLastItems = (itemsArr) => {
   let newArr = [firstItem, lastItem];
   return newArr;
 };
-
+//export const getFirstAndLastItems = (itemsArr) =>[itemsArr.at(0), itemsArr.at(-1)];
+//export const getFirstAndLastItems = (itemsArr) => [itemsArr[0],itemsArr[itemsArr.length - 1]];
 /**
  * A function that takes an array of scores and totals the scores by looping through the array.
  *
@@ -73,6 +75,7 @@ export const totalRange = (rangeMax) => {
   }
   return sum;
 };
+//export const totalRange = (rangeMax) => rangeMax*(rangeMax+1)*0.5;
 
 /**
  * Read this article on how to clone an array.
@@ -89,13 +92,14 @@ export const totalRange = (rangeMax) => {
  */
 
 export const moveFirstAndLastItems = (itemsArr) => {
-  let newArr = [...itemsArr];
+  const newArr = [...itemsArr];
   if(newArr.length!=0){
-    let lastItem = newArr.pop();
-    newArr.unshift(lastItem);
+    const lastItem = newArr.pop();
+    newArr.unshift(lastItem); //newArr.unshift(newArr.pop());
   return newArr;
   }
 };
+//export const moveFirstAndLastItems = (itemsArr) =>[itemsArr.at(-1), ...itemsArr.slice(0,-1)];
 
 /**
  * A function that takes an array of numbers and returns a NEW ARRAY with only the odd numbers from the given array. It should not mutate the input array.
@@ -104,7 +108,7 @@ export const moveFirstAndLastItems = (itemsArr) => {
  * @return {number[]} [1,1,1,1]
  */
 
-export const removeEvenNumbers = (numberArr) => {
+export const removeEvenNumbers1 = (numberArr) => {
   let newArr = [...numberArr];
   let oddArr = new Array();
   for (let i = 0; i < newArr.length; i++) {
@@ -113,6 +117,14 @@ export const removeEvenNumbers = (numberArr) => {
     }
   }
   return oddArr;
+};
+export const removeEvenNumbers2 = (numberArr) => {
+  let newArr = [...numberArr];
+  newArr=newArr.filter((num)=>num%2===1)
+  return newArr;
+};
+export const removeEvenNumbers = (numberArr) => {
+  return numberArr.filter((num)=>num%2===1);
 };
 
 /**
@@ -135,11 +147,13 @@ export const generateAverage = (numberArr) => {
     for (let i = 0; i < numberArr.length; i++) {
       sum += numberArr[i];
     }
-    let average = sum / numberArr.length;
-    return Math.round(average);
+    return Math.round(sum / numberArr.length);
   }
 };
-
+export const generateAverage1 = (numberArr) => {
+  if (numberArr.length == 0)return 0;
+ return Math.ceil(totalScores(numberArr) / numberArr.length);
+}
 /**
  * A function that uses a loop to reverse the order of an Array. It should return a NEW ARRAY and not Mutate the orginal array.
  *
@@ -148,7 +162,7 @@ export const generateAverage = (numberArr) => {
  */
 
 export const reverseOrder = (toReverseArr) => {
-  let newArr = [...toReverseArr].reverse();
+  const newArr = [...toReverseArr].reverse();
   return newArr;
 };
 
