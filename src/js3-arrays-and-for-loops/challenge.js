@@ -231,7 +231,6 @@ export const encryptString = (toEncrypt) => {
   let firstArr = [];
   let secondArr = [];
   let thirdArr = [];
-  let newArr=[];
   for (let i = 0; i < toEncrypt.length; i+= 3) {
     firstArr.push(toEncrypt[i]);
   }
@@ -241,7 +240,6 @@ export const encryptString = (toEncrypt) => {
   for (let i = 2; i < toEncrypt.length; i +=3) {
     thirdArr.push(toEncrypt[i]);
   }
-  newArr=firstArr.concat(secondArr,thirdArr);
-  newArr=newArr.join("");
+  const newArr=firstArr.concat(secondArr,thirdArr).join("");
   return newArr;
 };

@@ -22,7 +22,7 @@
  */
 
 export const totalScoresArr = (scoresArr) => {
-  return;
+  return scoresArr.reduce((acc, current) => (acc += current));
 };
 
 /**
@@ -35,7 +35,7 @@ export const totalScoresArr = (scoresArr) => {
  */
 
 export const reverseString = (toReverse) => {
-  return;
+  return toReverse.split(" ").map((word) =>word.split("").reverse().join ("")).join(" ");
 };
 
 /**
@@ -48,7 +48,7 @@ export const reverseString = (toReverse) => {
  */
 
 export const sortCharactersAlphabetically = (charcterArr) => {
-  return;
+  return charcterArr.map((char)=>char.toLowerCase()).sort();
 };
 
 /**
@@ -63,7 +63,7 @@ export const sortCharactersAlphabetically = (charcterArr) => {
  */
 
 export const sortNumbersHighToLow = (numberArr) => {
-  return;
+  return numberArr.sort(function(a,b){return b-a});
 };
 
 /**
@@ -94,7 +94,10 @@ export const checkItemInstock = (toCheck) => {
     "blueberry",
     "melon",
   ];
-  return;
+  const aisle=stockList.indexOf(toCheck);
+  if(aisle>=0)
+  return `${toCheck} is instock, it is on aisle ${aisle}.`
+  return `Sorry ${toCheck} is not instock.`;
 };
 
 /**
@@ -108,7 +111,10 @@ export const checkItemInstock = (toCheck) => {
  */
 
 export const checkPrimaryColours = (coloursArr) => {
-  return;
+  const primaryColor=["yellow","red","blue"];
+  return coloursArr.every((color)=>{
+    return primaryColor.includes(color)
+  })
 };
 
 /**
@@ -125,7 +131,10 @@ export const checkPrimaryColours = (coloursArr) => {
  */
 
 export const checkStringPalindrome = (stringOne) => {
-  return;
+
+  const stringReverse=stringOne.split("").reverse().join("")
+
+  return stringOne==stringReverse?true:false;
 };
 
 /**
@@ -138,8 +147,8 @@ export const checkStringPalindrome = (stringOne) => {
  * @return {number[]} [20, 7, 3]
  */
 
-export const totalNestedScoresArr = (scoresArr) => {
-  return;
+export const totalNestedScoresArr = (numberArr) => {
+  return numberArr.map((nums)=>nums.reduce((acc,current)=>acc+=current,0))
 };
 
 /**
@@ -172,5 +181,20 @@ export const totalNestedScoresArr = (scoresArr) => {
  */
 
 export const encryptString = (toEncrypt) => {
-  return;
+  // const newArr=[];
+  // const toEncryptArr=toEncrypt.split("");
+  let firstArr = [];
+  let secondArr = [];
+  let thirdArr = [];
+  for (let i = 0; i < toEncrypt.length; i+= 3) {
+    firstArr.push(toEncrypt[i]);
+  }
+  for (let i = 1; i < toEncrypt.length; i += 3) {
+    secondArr.push(toEncrypt[i]);
+  }
+  for (let i = 2; i < toEncrypt.length; i +=3) {
+    thirdArr.push(toEncrypt[i]);
+  }
+  const newArr=firstArr.concat(secondArr,thirdArr);
+  return newArr.reduce((acc,current)=>acc+=current,"")
 };
