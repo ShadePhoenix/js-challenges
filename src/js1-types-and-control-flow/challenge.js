@@ -17,6 +17,7 @@
  */
 const firstName = "John";
 const lastName = "Smith";
+const test="test";
 
 export const createFullName = () => {
 <<<<<<< Updated upstream
