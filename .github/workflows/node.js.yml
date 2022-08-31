@@ -26,6 +26,15 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: "npm"
             - run: npm ci
-            - run: npm test
+            - run: npm test js1
+            - run: npm test js2
+            - run: npm test js3
+            - run: npm test js4
+            - run: npm test js5
             - run: npm test js6
+            - run: npm test js7
+            - run: npm test js8
+            - run: npm test js9
+            - run: npm test js10
+            - run: npm test js11
               if: always()
