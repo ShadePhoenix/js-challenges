@@ -50,12 +50,12 @@ jobs:
             # - run: npm test js11
               # if: always()
             - name: Test Report
-              uses: phoenix-actions/test-reporting@v8
+              uses: actions/upload-artifact@v3
               if: always()    # run this step even if previous step failed
               with:
                 name: JEST Tests            # Name of the check run which will be created
                 path: reports/jest-*.xml    # Path to test results
-                reporter: jest-junit        # Format of test results
+                # reporter: jest-junit        # Format of test results
             # - name: Create test summary
             #   uses: ./bin
             #   with:
