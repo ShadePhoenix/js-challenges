@@ -4,10 +4,7 @@
 name: Node.js CI
 
 # trigger
-on:
-  push:
-    branches:
-      - 'students/**'
+on: [push]
 
 # what we want to happen
 jobs:
