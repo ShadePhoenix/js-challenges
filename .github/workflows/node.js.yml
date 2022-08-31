@@ -27,7 +27,7 @@ jobs:
                   cache: "npm"
             - run: npm ci
             - name: run test js1
-              run: npm test
+              run: npm test js7
             #   if: always()
             # - run: npm test js2
             #   if: always()
