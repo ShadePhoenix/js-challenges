@@ -49,20 +49,20 @@ jobs:
             #   if: always()
             # - run: npm test js11
               # if: always()
-            # - name: Test Report
-            #   uses: actions/upload-artifact@v3
-            #   if: always()    # run this step even if previous step failed
-            #   with:
-            #     name: JEST Tests            # Name of the check run which will be created
-            #     path: reports/jest-*.xml    # Path to test results
-                # reporter: jest-junit        # Format of test results
-            - name: Create test summary
-              uses: ./bin
-              with:
-                paths: reports/*.xml
-                output: reports/results.html
-            - name: Upload test summary
+            - name: Test Report
               uses: actions/upload-artifact@v3
+              if: always()    # run this step even if previous step failed
               with:
-                name: test-summary
-                path: reports/results.html
+                name: JEST Tests            # Name of the check run which will be created
+                path: reports/jest-*.xml    # Path to test results
+                # reporter: jest-junit        # Format of test results
+            # - name: Create test summary
+            #   uses: ./bin
+            #   with:
+            #     paths: reports/*.xml
+            #     output: reports/results.html
+            # - name: Upload test summary
+            #   uses: actions/upload-artifact@v3
+            #   with:
+            #     name: test-summary
+            #     path: reports/results.html
