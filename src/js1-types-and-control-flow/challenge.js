@@ -48,6 +48,7 @@ const addNumber2 = 24;
 
 export const addNumbers = () => {
     // Write your code here
+    return addNumber1 + addNumber2;
 };
 
 /* Intermediate Challenges */
@@ -62,6 +63,7 @@ const password = "thisIsMyVeryLongPassword123456789";
 
 export const findLengthOfPassword = () => {
     // Write your code here
+    return password.length;
 };
 
 /**
