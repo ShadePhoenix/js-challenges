@@ -80,6 +80,7 @@ const thing = "I am a thing";
 
 export const findType = () => {
     // Write your code here
+    return `This is a ${typeof thing}`;
 };
 
 /**
@@ -93,6 +94,7 @@ const nameTagOption = "Timothy";
 
 export const getIsValidOnNameTag = () => {
     // Write your code here
+    return nameTagOption.length <= 8 && true;
 };
 
 /* Advanced Challenges */
@@ -107,6 +109,7 @@ const stringToConvert = "14.45";
 
 export const convertStringToNumber = () => {
     // Write your code here
+    return parseFloat(stringToConvert);
 };
 
 /**
@@ -121,6 +124,7 @@ const stringWithUppercaseLetters = "I Am A String With Uppercase Letters";
 
 export const getHasUppercaseLetters = () => {
     // Write your code here
+    return stringWithUppercaseLetters.match(/[A-Z]/).length > 0;
 };
 
 /* Expert Challenge */
@@ -135,4 +139,8 @@ const pascalCaseVariableName = "IWantToBeSnakeCase";
 
 export const convertPascalCaseToSnakeCase = () => {
     // Write your code here
+    return pascalCaseVariableName
+        .split(/(?=[A-Z])/)
+        .join("_")
+        .toLowerCase();
 };
