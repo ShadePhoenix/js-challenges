@@ -34,6 +34,7 @@ const largeNumber2 = 200;
 
 export const findLargestNumber = () => {
     // Write your code here
+    return largeNumber1 > largeNumber2 ? largeNumber1 : largeNumber2;
 };
 
 /**
