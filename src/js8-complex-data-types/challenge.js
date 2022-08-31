@@ -18,6 +18,7 @@
  */
 export const getEmployeeQuotes = (employeeArr) => {
   // Write code here
+  return employeeArr.map(employee=>employee.quote)
 };
 
 /**
@@ -28,6 +29,7 @@ export const getEmployeeQuotes = (employeeArr) => {
  */
 export const getTheManagers = (employeeArr) => {
   // Write code here
+  return employeeArr.filter(employee=>employee.isManagement==true)
 };
 
 /**
@@ -38,6 +40,7 @@ export const getTheManagers = (employeeArr) => {
  */
 export const getNumberOfKeys = (object) => {
   // Write code here
+  return Object.keys(object).length
 };
 
 /* Intermediate Challenges */
@@ -51,6 +54,9 @@ export const getNumberOfKeys = (object) => {
  */
 export const findMostExpensiveItem = (shoppingBasketArr) => {
   // Write code here
+  const allPrices= shoppingBasketArr.map((item)=>item.price)
+  const maxPrice=Math.max(...allPrices);
+return shoppingBasketArr.find((item)=>item.price==maxPrice)
 };
 
 /**
@@ -70,6 +76,7 @@ export const findMostExpensiveItem = (shoppingBasketArr) => {
  */
 export const settotalPrice = (shoppingBasketArr) => {
   // Write code here
+  return shoppingBasketArr.map((shoppingBasket)=>({...shoppingBasket,totalPrice:shoppingBasket.price*shoppingBasket.quantity}))
 };
 
 /**
@@ -80,6 +87,7 @@ export const settotalPrice = (shoppingBasketArr) => {
  */
 export const totalShoppingBasket = (shoppingBasketArr) => {
   // Write code here
+  return shoppingBasketArr.reduce((acc,shoppingBasket)=>acc+=shoppingBasket.totalPrice,0)
 };
 
 /* Advanced Challenges */
@@ -93,6 +101,10 @@ export const totalShoppingBasket = (shoppingBasketArr) => {
  */
 export const getImportantKeys = (mealsArr) => {
   // Write code here
+  return mealsArr.map((meal)=>{
+    const {id, name, ingredients, country,...otherProperties}=meal
+    return {id, name, ingredients, country}
+  })
 };
 
 /**
@@ -107,6 +119,15 @@ export const getImportantKeys = (mealsArr) => {
  */
 export const setImportantKeys = (mealsArr) => {
   // Write code here
+  return mealsArr.map((meal)=>{
+    // if(!meal.hasOwnProperty("isVegetarian")&&!meal.hasOwnProperty("timeToCook"))
+    // return {...meal,isVegetarian:false,timeToCook:15}
+    if(!meal.hasOwnProperty("isVegetarian"))
+      return {...meal,isVegetarian:false}
+    if(!meal.hasOwnProperty("timeToCook"))
+    return {...meal,timeToCook:15}
+    return meal
+  })
 };
 
 /* Expert Challenge */
@@ -139,4 +160,8 @@ export const setImportantKeys = (mealsArr) => {
  */
 export const cleanCocktailResponseData = (cocktailData) => {
   // Write code here
+  return cocktailData.map((data)=>{
+    const {idDrink,strDrink,strCategory,strAlcoholic,strInstructions,...ingredients}=data;
+    return {id:idDrink,drink:strDrink,category:strCategory,alcoholic:strAlcoholic,instructions:strInstructions,ingredients:Object.values(ingredients).filter((ingredient)=>ingredient)}
+  })
 };

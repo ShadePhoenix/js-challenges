@@ -17,8 +17,13 @@
  * @returns {string} John Smith
  */
 export const createFullName = (firstName, lastName) => {
+<<<<<<< Updated upstream
+    let fullName = firstName + " " + lastName;
+    return fullName;
+=======
   /* Write your code here */
   return `${firstName} ${lastName}`;
+>>>>>>> Stashed changes
 };
 
 /**
@@ -30,9 +35,14 @@ export const createFullName = (firstName, lastName) => {
  * @returns {number} 100
  */
 export const findSmallestNumber = (number1, number2) => {
+<<<<<<< Updated upstream
+    let number = number1 > number2 ? number2 : number1;
+    return number;
+=======
   /* Write your code here */
   let number = number1 > number2 ? number2 : number1;
   return number;
+>>>>>>> Stashed changes
 };
 
 /**
@@ -44,9 +54,13 @@ export const findSmallestNumber = (number1, number2) => {
  * @returns {number} 18
  */
 export const multiplyNumbers = (number1, number2) => {
+<<<<<<< Updated upstream
+    return number1 * number2;
+=======
   /* Write your code here */
   let number = number1 * number2;
   return number;
+>>>>>>> Stashed changes
 };
 
 /* Intermediate Challenges */
@@ -62,10 +76,20 @@ export const multiplyNumbers = (number1, number2) => {
  * @returns {string} "You got a new high score!" | "So close!" | "Better luck next time!"
  */
 export const checkIfNewHighScore = (score, highScore) => {
+<<<<<<< Updated upstream
+    if (score > highScore) {
+        return "You got a new high score!";
+    } else if (score == highScore) {
+        return "So close!";
+    } else {
+        return "Better luck next time!";
+    }
+=======
   /* Write your code here */
   if (score < highScore) return "Better luck next time!";
   else if (score > highScore) return "You got a new high score!";
   else if ((score = highScore)) return "So close!";
+>>>>>>> Stashed changes
 };
 
 /**
@@ -75,10 +99,19 @@ export const checkIfNewHighScore = (score, highScore) => {
  * @returns {string} "15 degrees celsius is 59 degrees fahrenheit"
  */
 export const celsiusToFahrenheit = (tempInCelsius) => {
+<<<<<<< Updated upstream
+    return (
+        tempInCelsius +
+        " degrees celsius is " +
+        (tempInCelsius * 1.8 + 32) +
+        " degrees fahrenheit"
+    );
+=======
   /* Write your code here */
   return `${tempInCelsius} degrees celsius is ${
     (tempInCelsius *1.8+32)
   } degrees fahrenheit`;
+>>>>>>> Stashed changes
 };
 
 /**
@@ -91,9 +124,14 @@ export const celsiusToFahrenheit = (tempInCelsius) => {
  * @returns {number} 47450
  */
 export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
+<<<<<<< Updated upstream
+    let yearsRemaining = maxAge - age;
+    return yearsRemaining * 365 * snickersPerDay;
+=======
   /* Write your code here */
   let yearsleft = maxAge - age;
   return yearsleft * 365 * snickersPerDay;
+>>>>>>> Stashed changes
 };
 
 /* Advanced Challenges */
@@ -113,6 +151,41 @@ export const calculateLifetimeSupply = (snickersPerDay, age, maxAge) => {
  * @returns {string} A - F | Score unavailable
  */
 export const getGrade = (score) => {
+<<<<<<< Updated upstream
+    if (typeof score != "number") return "Score unavailable";
+    switch (true) {
+        case score <= 100 && score >= 80:
+            return "A";
+        case score >= 70 && score < 80:
+            return "B";
+        case score < 70 && score >= 60:
+            return "C";
+        case score < 60 && score >= 50:
+            return "D";
+        case score < 50 && score >= 40:
+            return "E";
+        case score < 40 && score >= 0:
+            return "F";
+        default:
+            return "Score unavailable";
+    }
+
+    //if (typeof score != "number" || score < 0 || score > 100) return "Score unavailable";
+
+    //  if (score >= 80) {
+    //      return "A";
+    //  } else if (score >= 70) {
+    //      return "B";
+    //  } else if (score >= 60) {
+    //      return "C";
+    //  } else if (score >= 50) {
+    //      return "D";
+    //  } else if (score >= 40) {
+    //      return "E";
+    //  } else {
+    //      return "F";
+    //  }
+=======
   /* Write your code here */
   if (score < 0 || score > 100 || typeof score != "number")
     return "Score unavailable";
@@ -122,6 +195,7 @@ export const getGrade = (score) => {
   else if (score <= 69) return "C";
   else if (score <= 79) return "B";
   else if (score <= 100) return "A";
+>>>>>>> Stashed changes
 };
 
 /**
@@ -131,9 +205,13 @@ export const getGrade = (score) => {
  * @returns {number} 28.27
  */
 export const calculateAreaOfCircle = (radius) => {
+<<<<<<< Updated upstream
+    return parseFloat((radius ** 2 * Math.PI).toFixed(2));
+=======
   /* Write your code here */
   let area = Math.PI * radius ** 2;
   return Math.round(area * 100) / 100;
+>>>>>>> Stashed changes
 };
 
 /* Expert Challenge */
@@ -154,6 +232,53 @@ export const calculateAreaOfCircle = (radius) => {
  * @param {string} name John
  */
 export const getStudentSummary = (score, name) => {
+<<<<<<< Updated upstream
+    // switch (true) {
+    //     case getGrade(score) == "A":
+    //         return `Congratulations ${name}! You achieved a grade of A.`;
+    //     case getGrade(score) == "B":
+    //         return `Well done ${name}! You achieved a grade of B.`;
+    //     case getGrade(score) == "C":
+    //         return `Nicely done ${name}! You achieved a grade of C.`;
+    //     case getGrade(score) == "D":
+    //         return `That's okay ${name}. You achieved a grade of D.`;
+    //     case getGrade(score) == "E":
+    //         return `Too bad ${name}. You achieved a grade of E.`;
+    //     case getGrade(score) == "F":
+    //         return `Sorry ${name}. You achieved a grade of F. There's always next year.`;
+    //     default:
+    //         return `My apologies ${name}, there's been an error in processing your grade.`;
+    // }
+
+    switch (getGrade(score)) {
+        case "A":
+            return `Congratulations ${name}! You achieved a grade of ${getGrade(
+                score
+            )}.`;
+        case "B":
+            return `Well done ${name}! You achieved a grade of ${getGrade(
+                score
+            )}.`;
+        case "C":
+            return `Nicely done ${name}! You achieved a grade of ${getGrade(
+                score
+            )}.`;
+        case "D":
+            return `That's okay ${name}. You achieved a grade of ${getGrade(
+                score
+            )}.`;
+        case "E":
+            return `Too bad ${name}. You achieved a grade of ${getGrade(
+                score
+            )}.`;
+        case "F":
+            return `Sorry ${name}. You achieved a grade of ${getGrade(
+                score
+            )}. There's always next year.`;
+        default:
+            return `My apologies ${name}, there's been an error in processing your grade.`;
+    }
+=======
   /* Write your code here */
   let grade = getGrade(score);
   switch (grade) {
@@ -178,4 +303,5 @@ export const getStudentSummary = (score, name) => {
       default:
         return `My apologies ${name}, there's been an error in processing your grade.`;
   }
+>>>>>>> Stashed changes
 };

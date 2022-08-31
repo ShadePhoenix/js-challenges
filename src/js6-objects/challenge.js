@@ -22,6 +22,7 @@
  */
 export const getFurniturePrice = (furniture) => {
   /* Write code here */
+  return furniture.price;
 };
 
 /**
@@ -33,6 +34,9 @@ export const getFurniturePrice = (furniture) => {
  */
 export const setFurnitureStoreLocation = (furniture, location) => {
   /* Write code here */
+  furniture.location = location;
+  return furniture;// changes the object
+  //return {...furniture,location} //creates a brand new object
 };
 
 /**
@@ -45,8 +49,20 @@ export const setFurnitureStoreLocation = (furniture, location) => {
  * @param {boolean} canTravelSolarSystems The ability for the space ship to travel to different solar systems
  * @returns {{name: string, noOfSeats: number, engineType: string, canTravelSolarSystems: boolean}} spaceship - The space ship object
  */
-export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems) => {
+export const makeSpaceship = (
+  name,
+  noOfSeats,
+  engineType,
+  canTravelSolarSystems
+) => {
   /* Write code here */
+  let spaceShip = {
+    name: name,
+    noOfSeats: noOfSeats,
+    engineType: engineType,
+    canTravelSolarSystems: canTravelSolarSystems,
+  };
+  return spaceShip;
 };
 
 /* Intermediate Challenges */
@@ -60,6 +76,10 @@ export const makeSpaceship = (name, noOfSeats, engineType, canTravelSolarSystems
  */
 export const setUserName = (user, username) => {
   /* Write code here */
+  if (user.username == undefined) { //if(!user.hasOwnProperty("username"))
+    user.username = username;
+  }
+  return user;
 };
 
 /**
@@ -71,6 +91,10 @@ export const setUserName = (user, username) => {
  */
 export const splitFullNameToFirstAndLast = (customer) => {
   /* Write code here */
+  const fullNameArr = customer.fullName.split(" ");
+  customer.firstName = fullNameArr[0];
+  customer.lastName = fullNameArr[1];
+  return customer;
 };
 
 /**
@@ -84,6 +108,7 @@ export const splitFullNameToFirstAndLast = (customer) => {
  */
 export const accessGivenKey = (object, key) => {
   /* Write code here */
+  return object[key];
 };
 
 /* Advanced Challenges */
@@ -97,6 +122,7 @@ export const accessGivenKey = (object, key) => {
  */
 export const getUserAddress = (user) => {
   /* Write code here */
+  return `${user.address.line1} ${user.address.line2} ${user.address.city} ${user.address.postcode}`;
 };
 
 /**
@@ -109,6 +135,16 @@ export const getUserAddress = (user) => {
  */
 export const setSafeAllergens = (customer, allergenList) => {
   /* Write code here */
+  const Custallergies = customer.allergies;
+  let custSafeAleergies = [];
+  allergenList.map((item) => {
+    if (!Custallergies.includes(item)) {
+      custSafeAleergies.push(item)
+      return custSafeAleergies
+    }
+  });
+  customer.safeAllergens = custSafeAleergies;
+  return customer;
 };
 
 /* Expert Challenge */
@@ -123,4 +159,8 @@ export const setSafeAllergens = (customer, allergenList) => {
  */
 export const mergeFurniture = (furnitureLocationData, furnitureProductData) => {
   /* Write code here */
+  if(furnitureLocationData.id==furnitureProductData.id){
+    const newObj={id:furnitureLocationData.id, location:furnitureLocationData.location, sku:furnitureLocationData.sku,name:furnitureProductData.name,price:furnitureProductData.price,isAvailable:furnitureProductData.isAvailable}
+    return newObj
+  }
 };

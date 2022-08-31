@@ -1,8 +1,8 @@
-/* JS5 builds on the previous challenges and adds the use of MORE Array iterators, Arrays, For Loops, Conditionals (If, else, switch)
+cd /* JS5 builds on the previous challenges and adds the use of MORE Array iterators, Arrays, For Loops, Conditionals (If, else, switch)
  *  & calling your own functions.
  */
 
-/* 
+/*
   All challenges in this repository are seperated into four levels: Foundation, Intermediate, Advanced and Expert.
   The expectation is to complete all Foundation level challenges, with Intermediate and upwards pushing your knowledge
   and may require you to google things in order to solve them. If you find an answer online somewhere, be kind and
@@ -64,6 +64,7 @@ export const sortCharactersAlphabetically = (charcterArr) => {
 
 export const sortNumbersHighToLow = (numberArr) => {
   return numberArr.sort(function(a,b){return b-a});
+  // return numberArr.sort((a,b)=>b-a);
 };
 
 /**
@@ -135,6 +136,7 @@ export const checkStringPalindrome = (stringOne) => {
   const stringReverse=stringOne.split("").reverse().join("")
 
   return stringOne==stringReverse?true:false;
+  // return stringOne==stringReverse
 };
 
 /**
