@@ -19,12 +19,12 @@ jobs:
 
         steps:
             - uses: actions/checkout@v3
-            - name: Use Node.js ${{matrix.node-version}}
-                uses: actions/setup-node@v3
-                with:
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
+              with:
                     node-version: ${{matrix.node-version}}
                     cache: "npm"
             - run: npm ci
             - name: Run tests
-                run: npm test
-                if: always()
+              run: npm test
+              if: always()
