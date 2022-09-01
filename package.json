@@ -13,7 +13,8 @@
     "scripts": {
         "test-coverage": "jest ./src/js11-unit-testing/challenge.test.js --watch --coverage",
         "test": "jest",
-        "test-watch": "jest --watch"
+        "test-watch": "jest --watch",
+        "test-output": "jest --json --outputFile=.github/result.json --testLocationInResults"
     },
     "contributors": [
         {
