@@ -21,17 +21,6 @@ class MyCustomReporter {
                 "There is no user set in environment. No submission will be made to Formspree."
             );
 
-        axios({
-            url: "https://formspree.io/f/xnqrnkll",
-            method: "post",
-            headers: {
-                Accept: "application/json"
-            },
-            data: { name: process.env.USER, results }
-        }).then((response) => {
-            console.log(response);
-        });
-
         //const test = [...results.testResults];
         //console.log(test[0]);
         // console.log(
@@ -56,6 +45,16 @@ class MyCustomReporter {
         // );
         //console.log(results);
         //console.log(contexts);
+        axios({
+            url: "https://formspree.io/f/xnqrnkll",
+            method: "post",
+            headers: {
+                Accept: "application/json"
+            },
+            data: { name: process.env.USER, results }
+        }).then((response) => {
+            console.log(response);
+        });
     }
 
     getLastError() {
