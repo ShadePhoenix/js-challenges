@@ -26,10 +26,4 @@ jobs:
                     cache: "npm"
             - run: npm ci
             - name: Run tests
-<<<<<<< HEAD
                 run: npm run test-github
-                if: always()
-=======
-              run: npm test
-              if: always()
->>>>>>> 82f05c98090860292d5904894434a59e74fb37c8
