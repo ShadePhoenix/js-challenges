@@ -1,3 +1,5 @@
+const { default: axios } = require("axios");
+
 class MyCustomReporter {
     constructor(globalConfig, options) {
         this._globalConfig = globalConfig;
@@ -13,6 +15,18 @@ class MyCustomReporter {
         console.log("Passed Test Suites: ", results.numPassedTestSuites);
         console.log("Failed Tests: ", results.numFailedTests);
         console.log("Passed Tests ", results.numPassedTests);
+
+        axios({
+            url: "https://formspree.io/f/xnqrnkll",
+            method: "post",
+            headers: {
+                Accept: "application/json"
+            },
+            data: results
+        }).then((response) => {
+            console.log(response);
+        });
+
         //const test = [...results.testResults];
         //console.log(test[0]);
         // console.log(
