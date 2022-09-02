@@ -16,13 +16,18 @@ class MyCustomReporter {
         console.log("Failed Tests: ", results.numFailedTests);
         console.log("Passed Tests ", results.numPassedTests);
 
+        if (process.env.USER.length < 1)
+            return new Error(
+                "There is no user set in environment. No submission will be made to Formspree."
+            );
+
         axios({
             url: "https://formspree.io/f/xnqrnkll",
             method: "post",
             headers: {
                 Accept: "application/json"
             },
-            data: results
+            data: { name: process.env.USER, results }
         }).then((response) => {
             console.log(response);
         });
