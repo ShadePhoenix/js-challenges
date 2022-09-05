@@ -4,10 +4,14 @@
 name: Node.js CI
 
 on:
-    push:
-        branches-ignore:
-            - master
-            - main
+    pull_request:
+        types: [opened, reopened]
+    # push:
+    # branches:
+    # - 'student/**'
+    # branches-ignore:
+    # - master
+    # - main
 
 env:
     USER: ${{github.actor}}

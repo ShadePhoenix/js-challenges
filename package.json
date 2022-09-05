@@ -28,6 +28,18 @@
         {
             "name": "Andy Evans",
             "email": "andy@nology.io"
+        },
+        {
+            "name": "Daniel Legaspi-Finch",
+            "email": "daniel.legaspi-finch@outlook.com"
+        },
+        {
+            "name": "Laila Kamel",
+            "email": "laila_kamel@hotmail.com"
+        },
+        {
+            "name": "Darcy Henschke",
+            "email": "darcyhenschke@gmail.com"
         }
     ],
     "license": "ISC",

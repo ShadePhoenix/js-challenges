@@ -35,10 +35,10 @@ class JestFormspreeReporter {
             data: {
                 name: process.env.USER,
                 results: {
-                    FailedTests: results.numFailedTests,
-                    PassedTests: results.numPassedTests,
-                    TotalTests: results.numTotalTests,
-                    FailedTestMessages: failedTests
+                    failedTests: results.numFailedTests,
+                    passedTests: results.numPassedTests,
+                    totalTests: results.numTotalTests,
+                    failedTestMessages: failedTests
                 }
             }
         }).then((response) => {
