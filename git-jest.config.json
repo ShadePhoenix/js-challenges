@@ -1,4 +1,4 @@
 {
     "verbose": false,
-    "reporters": ["./my-custom-reporter.js"]
+    "reporters": ["./jest-to-formspree.reporter.js"]
 }
