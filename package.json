@@ -14,7 +14,7 @@
         "test-coverage": "jest ./src/js11-unit-testing/challenge.test.js --watch --coverage",
         "test": "jest",
         "test-watch": "jest --watch",
-        "github:test": "jest --no-colors -c=./git-jest.config.json"
+        "github-test": "jest --no-colors -c=./git-jest.config.json"
     },
     "contributors": [
         {

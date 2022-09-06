@@ -34,5 +34,5 @@ jobs:
                   cache: "npm"
             - run: npm ci
             - name: Run tests
-              run: npm run github:test
+              run: npm run github-test
               continue-on-error: true
